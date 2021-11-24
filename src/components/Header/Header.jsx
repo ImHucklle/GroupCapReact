@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import './Header.css';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from "@material-ui/icons/Search";
-import AppsIcon from '@material-ui/icons/Apps';
-// import NotificationsIcon from '@material-ui/icons/Notifications';
+import PersonAddAlt1SharpIcon from '@mui/icons-material/PersonAddAlt1Sharp';
 import Avatar from '@material-ui/core/Avatar';
 import LoginSharpIcon from '@mui/icons-material/LoginSharp';
-import AppRegistrationSharpIcon from '@mui/icons-material/AppRegistrationSharp';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 
 class Header extends Component{
@@ -35,9 +33,8 @@ class Header extends Component{
                 </div>
 
                 <div className="header__input">
-                    <input type="text" />
-                    
-                    <SearchIcon />
+                    <input placeholder="Search" type="text" />
+                    <SearchIcon className="header__inputButton" />
                     {/* <form onSubmit={this.handleSubmit}>
                         <label htmlFor="search">Search</label>
                         <input action='Search' onChange={this.handleChange} name='search' type="text" value={this.state.search}/>
@@ -46,16 +43,42 @@ class Header extends Component{
                 </div>
 
                 <div className="header__icons">
-                    <LoginSharpIcon className="header__icons" />
-                    <LogoutSharpIcon className="header__icons" />
-                    <AppRegistrationSharpIcon className="header__icons" />
-                    {/* <Button variant="outlined">Log In</Button>
-                    <Button variant="outlined">Log Out</Button> */}
-                    {/* <AppsIcon className="header__icons" /> */}
-                    {/* <NotificationsIcon className="header__icons" /> */}
-                    <Avatar 
+                    <div className="register">
+                        <button type='button' className="button">
+                            <span className="button__text">
+                                Register
+                            </span>
+                            <span className="button__icon">
+                                < PersonAddAlt1SharpIcon/>
+                            </span>
+                        </button>
+                    </div>
+                    <div className="login">
+                        <button type='button' className="button">
+                            <span className="button__text">
+                                Log in
+                            </span>
+                            <span className="button__icon">
+                                < LoginSharpIcon/>
+                            </span>
+                        </button>
+                    </div>
+                    <div className="logout">
+                        <button type='button' className="button">
+                            <span className="button__text">
+                                Log out
+                            </span>
+                            <span className="button__icon">
+                                < LogoutSharpIcon/>
+                            </span>
+                        </button>
+                    </div>
+                     
+                    {/* COMMENTING OUT THE AVATAR B/C THEN WE'D HAVE TO CREATE A PIC UPLOAD IN THE REGISTRATION FORM */}
+ 
+                    {/* <Avatar 
                         alt="Avatar"
-                        src="https://media-exp1.licdn.com/dms/image/C4E03AQF46L0HsEN25w/profile-displayphoto-shrink_800_800/0/1516757744200?e=1643241600&v=beta&t=JCI3WR1otJPtS7rek6_PnVly17zlBz7dvoLBGkpZba0" />
+                        src="https://media-exp1.licdn.com/dms/image/C4E03AQF46L0HsEN25w/profile-displayphoto-shrink_800_800/0/1516757744200?e=1643241600&v=beta&t=JCI3WR1otJPtS7rek6_PnVly17zlBz7dvoLBGkpZba0" /> */}
                 </div>      
             </div>
         )
