@@ -1,28 +1,33 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-// import Registration from './Registration/Registration';
-import Header from './Header/Header.jsx';
+import Registration from './Registration/Registration';
+import Login from './Login/Login';
+import {BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-    // const getLogin = async (userName, password) => (){
-    //     let response = await axios.get()
+function App() {
+    const [title, updateTitle] = useState(null);
+    const [errorMessage, updateErrorMessage] = useState(null);
 
-    // }
-
-
-
-    render(){
         return (
-            <div className="App">
-                <Header/ >
-                {/* <Registration/ > */}
-            </div>
+            <Router>
+                <Switch>
+                    <Route path="/" exact={true}>
+                        <Registration showError={updateErrorMessage} updateTitle={updateTitle}/>
+                    </Route>
+                    <Route path="/register">
+                        <Registration showError={updateErrorMessage} updateTitle={updateTitle}/>
+                    </Route>
+                    <Route path="/login">
+                        <Login showError={updateErrorMessage} updateTitle={updateTitle}/>
+                    </Route>
+                </Switch>  
+            </Router>
+            
         )
-    }
+    
 }
 
 export default App;
