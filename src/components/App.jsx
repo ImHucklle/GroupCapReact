@@ -1,26 +1,20 @@
 import React, {Component} from 'react';
 import './App.css';
 import Registration from './Registration/Registration';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-    // const getLogin = async (userName, password) => (){
-    //     let response = await axios.get()
+function App() {
+    
 
-    // }
-
-
-
-    render(){
         return (
-            <div className="App">
-                <Registration/>
-            </div>
+            <Router>
+                <Switch>
+                    <Route path="/register" component={Registration} />
+                </Switch>  
+            </Router>
+            
         )
-    }
+    
 }
 
 export default App;
