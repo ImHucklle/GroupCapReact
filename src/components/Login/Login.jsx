@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import './Login.css';
+import './Login.scss';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstant';
 import { withRouter } from "react-router-dom";
 
@@ -56,9 +56,9 @@ function LoginForm(props) {
         props.updateTitle('Register');
     }
     return(
-        <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+        <div className="login">
             <form>
-                <div className="form-group text-left">
+                <div>
                 <label htmlFor="exampleInputEmail1">Email address</label>
                 <input type="email" 
                        className="form-control" 
@@ -68,7 +68,7 @@ function LoginForm(props) {
                        onChange={handleChange}
                 />
                 </div>
-                <div className="form-group text-left">
+                <div>
                 <label htmlFor="exampleInputPassword1">Password</label>
                 <input type="password" 
                        className="form-control" 
@@ -78,18 +78,17 @@ function LoginForm(props) {
                        onChange={handleChange} 
                 />
                 </div>
-                <div className="form-check">
+                <div>
                 </div>
                 <button 
                     type="submit" 
-                    className="btn btn-primary"
                     onClick={handleSubmitClick}
                 >Submit</button>
             </form>
-            <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
+            <div style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}
             </div>
-            <div className="registerMessage">
+            <div>
                 <span>Dont have an account? </span>
                 <span className="loginText" onClick={() => redirectToRegister()}>Register</span> 
             </div>

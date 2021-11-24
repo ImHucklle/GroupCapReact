@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import './Registration.css';
+import './Registration.scss';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstant';
 import { withRouter } from "react-router-dom";
 
@@ -12,7 +12,6 @@ function Registration(props) {
         password: "",
         email: "",
         phonenumber: "",
-        successMessage: null
         
     })
     const handleChange = (e) => {
@@ -24,39 +23,7 @@ function Registration(props) {
         }))
     }
 
-    const sendDetailsToServer = () => {
-        if(state.email.length && state.password.length) {
-            props.showError(null);
-            const payload={
-                "firstname":state.firstname,
-                "lastname":state.lastname,
-                "username":state.username,
-                "password":state.password,
-                "email":state.email,
-                "phonenumber":state.phonenumber,
-            }
-            axios.post(API_BASE_URL+'/api/authentication', payload)
-                .then(function (response) {
-                    if(response.status === 200){
-                        setState(prevState => ({
-                            ...prevState,
-                            'successMessage' : 'Registration successful. Redirecting to home page..'
-                        }))
-                        localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
-                        redirectToHome();
-                        props.showError(null)
-                    } else{
-                        props.showError("Some error ocurred");
-                    }
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });    
-        } else {
-            props.showError('Please enter valid username and password')    
-        }
-
-    }
+   
 
     const redirectToHome = () => {
         props.updateTitle('Home')
@@ -70,16 +37,10 @@ function Registration(props) {
 
     const handleSubmitClick = (e) => {
         e.preventDefault();
-        if(state.password === state.confirmPassword) {
-            sendDetailsToServer()    
-        } else {
-            props.showError('Passwords do not match');
-        }
-        console.log(state)
     }
 
     return(
-      <div>
+      <div className="registration">
             <form>
                     <input type="firstname" 
                        className="form-control" 

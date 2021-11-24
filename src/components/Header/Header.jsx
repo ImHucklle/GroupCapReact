@@ -3,7 +3,7 @@ import './Header.css';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from "@material-ui/icons/Search";
 import PersonAddAlt1SharpIcon from '@mui/icons-material/PersonAddAlt1Sharp';
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import LoginSharpIcon from '@mui/icons-material/LoginSharp';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 
