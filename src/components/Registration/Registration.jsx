@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './Registration.css';
-import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstants';
+import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstant';
 import { withRouter } from "react-router-dom";
 
 function Registration(props) {
@@ -54,6 +54,8 @@ function Registration(props) {
                 });    
         } else {
             props.showError('Please enter valid username and password')    
+        }
+
     }
 
     const redirectToHome = () => {
@@ -127,7 +129,9 @@ function Registration(props) {
                     />
                 <button type="submit" onClick={handleSubmitClick}>Register</button>
             </form>
-
+            <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
+                {state.successMessage}
+            </div>
             <div className="mt-2">
                 <span>Already have an account? </span>
                 <span className="loginText" onClick={() => redirectToLogin()}>Login here</span> 
@@ -136,4 +140,5 @@ function Registration(props) {
       </div>
     )
 }
+
 export default withRouter(Registration);

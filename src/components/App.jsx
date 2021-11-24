@@ -1,7 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
 import Registration from './Registration/Registration';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom';
 
 function App() {
     
