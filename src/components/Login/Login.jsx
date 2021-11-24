@@ -25,12 +25,12 @@ function LoginForm(props) {
             "password":state.password,
         }
         // Backend needs looked at for this axios call
-        axios.post(API_BASE_URL+'/user/login', payload)
+        axios.get(API_BASE_URL+'/api/examples/user', payload)
             .then(function (response) {
                 if(response.status === 200){
                     setState(prevState => ({
                         ...prevState,
-                        'successMessage' : 'Login successful. Redirecting to home page..'
+                        'successMessage' : 'Login successful'
                     }))
                     localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
                     redirectToHome();

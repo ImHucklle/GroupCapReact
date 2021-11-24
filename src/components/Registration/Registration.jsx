@@ -75,6 +75,7 @@ function Registration(props) {
         } else {
             props.showError('Passwords do not match');
         }
+        console.log(state)
     }
 
     return(

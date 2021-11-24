@@ -8,8 +8,8 @@ import {BrowserRouter as Router,
 } from 'react-router-dom';
 
 function App() {
-    const [title, updateTitle] = useState(null);
-    const [errorMessage, updateErrorMessage] = useState(null);
+    const [updateTitle] = useState(null);
+    const [updateErrorMessage] = useState(null);
 
         return (
             <Router>
