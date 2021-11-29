@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import BookCreator from './BookCreator/BookCreator';
 import Registration from './Registration/Registration';
 import Login from './Login/Login';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -27,6 +28,10 @@ function App() {
                     <Route path="/home">
                         <Header/>
                         <HomePage showError={updateErrorMessage} updateTitle={updateTitle}/>
+                    </Route>
+                    <Route path="/create">
+                        <Header/>
+                        <BookCreator showError={updateErrorMessage} updateTitle={updateTitle}/>
                     </Route>
                 </Switch>  
             </Router>
