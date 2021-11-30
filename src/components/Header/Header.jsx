@@ -9,6 +9,7 @@ import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 import HomeSharpIcon from '@mui/icons-material/HomeSharp';
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import SellSharpIcon from '@mui/icons-material/SellSharp';
+
 class Header extends Component{
     state = {
         search: '',
@@ -77,7 +78,7 @@ class Header extends Component{
                     <div className="login">
                         <button type='button' className="button">
                             <span className="button__text">
-                                Log in
+                                <Link to='/login'>Log in</Link>
                             </span>
                             <span className="button__icon">
                                 < LoginSharpIcon/>
@@ -87,7 +88,7 @@ class Header extends Component{
                     <div className="logout">
                         <button type='button' className="button">
                             <span className="button__text">
-                                Log out
+                                <Link to="/login" onClick={() =>{props.logout() }}>Logout Here</Link>
                             </span>
                             <span className="button__icon">
                                 < LogoutSharpIcon/>
