@@ -8,7 +8,7 @@ import Registration from './Registration/Registration';
 import Login from './Login/Login';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from './Header/Header'
-import HomePage from './Home/Home'
+import Home from './Home/Home'
 import BookViewer from './BookViewer/BookViewer';
 
 function App() {
@@ -54,7 +54,7 @@ function App() {
           <Header/>
             <Router>
                     <Route path="/" exact={true}>
-                      <HomePage user={user}/>
+                      <Home user={user}/>
                     </Route>
                     <Route path="/login">
                       <Login loginUserCall ={loginUser}/>
