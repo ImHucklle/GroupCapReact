@@ -46,12 +46,16 @@ function App() {
         localStorage.setItem('token', response.data.token);
         console.log("response axios call", response.data.token)
         setJwt(localStorage.getItem('token'));
-    
       }
+
+      // const logOut = ()=>{
+      //   localStorage.removeItem("token");
+      //   setUser({})
+      //   console.log("logged user out")
 
         return (   
           <div>
-          <Header/>
+          <Header />
             <Router>
                     <Route path="/" exact={true}>
                       <HomePage user={user}/>
