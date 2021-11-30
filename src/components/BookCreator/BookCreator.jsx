@@ -4,7 +4,8 @@ import './BookCreator.scss';
 import { withRouter } from "react-router-dom";
 
 function BookCreator() {
-    async function handleSubmitClick(){
+    async function handleSubmitClick(event){
+        event.preventDefault();
         console.log("hi")
         let _title = document.getElementById("title").value
         let _author = document.getElementById("author").value
@@ -15,14 +16,14 @@ function BookCreator() {
     
     
         let payload =  { 
-            Title: _title,
-            Author: _author,
-            Genre: _genre,
-            ReleaseDate: _releaseDate,
-            Description: _description,
-            Price: _price
+            "Title": _title,
+            "Author": _author,
+            "Genre": _genre,
+            "ReleaseDate": parseInt(_releaseDate),
+            "Description": _description,
+            "Price": parseInt(_price)
          };
-         
+        console.log(payload)
         let res = await axios.post('https://localhost:44394/api/books/create', payload);
         console.log(res)
         return res.data
@@ -32,14 +33,14 @@ function BookCreator() {
    
     return(
         <div className="bookCreator">
-            <form>
+            <form onSubmit={handleSubmitClick}>
                 <input type="text" id="title"  placeholder="Enter the book title" />
                 <input type="text" id="author"  placeholder ="Enter the author's name" />
                 <input type="text" id="genre"  placeholder ="Enter the book genre" />
-                <input type="int" id="releaseDate"  placeholder ="Enter the release date)" />
-                <input type="int" id="description"  placeholder ="Enter the description" />
-                <input type="int" id="price"  placeholder ="Enter the book price" />
-                <button type="submit" onClick={handleSubmitClick}>Add Book</button>
+                <input type="number" id="releaseDate"  placeholder ="Enter the release date)" />
+                <input type="text" id="description"  placeholder ="Enter the description" />
+                <input type="number" id="price"  placeholder ="Enter the book price" />
+                <button type="submit">Add Book</button>
 
             </form>
         </div>

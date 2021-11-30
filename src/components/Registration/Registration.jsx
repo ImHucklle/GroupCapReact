@@ -25,8 +25,6 @@ import { withRouter } from "react-router-dom";
             let res = await axios.post('https://localhost:44394/api/authentication/register', payload);
             console.log(res)
             return res.data
-            
-            
         }
     
         return(
