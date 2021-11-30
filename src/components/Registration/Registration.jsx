@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import './Registration.scss';
-// import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstant';
 import { withRouter } from "react-router-dom";
 
     function Registration() {
@@ -22,11 +21,12 @@ import { withRouter } from "react-router-dom";
                 Password: _password,
                 Email: _email,
                 PhoneNumber: _phoneNumber
-             };
+            }
             let res = await axios.post('https://localhost:44394/api/authentication/register', payload);
             console.log(res)
             return res.data
         }
+    
         return(
             <div className="registration">
                 <form>
@@ -42,4 +42,5 @@ import { withRouter } from "react-router-dom";
             </div>
         )
     }
+    
 export default withRouter(Registration);

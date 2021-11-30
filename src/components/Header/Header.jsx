@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from "@material-ui/icons/Search";
 import PersonAddAlt1SharpIcon from '@mui/icons-material/PersonAddAlt1Sharp';
-// import Avatar from '@material-ui/core/Avatar';
 import LoginSharpIcon from '@mui/icons-material/LoginSharp';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 
@@ -20,8 +20,7 @@ class Header extends Component{
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state.search)
-        this.props.getVideo(this.state.search);
+        this.props.getVideo(this.state);
     }
     
     render() {
@@ -43,23 +42,43 @@ class Header extends Component{
                 </div>
 
                 <div className="header__icons">
-                    <div className="register">
+                    <div className="home">
                         <button type='button' className="button">
                             <span className="button__text">
-                                Register
+                                <Link to='/'>Home</Link>
                             </span>
                             <span className="button__icon">
                                 < PersonAddAlt1SharpIcon/>
                             </span>
                         </button>
                     </div>
-                    <div className="login">
+                    <div className="cart">
                         <button type='button' className="button">
                             <span className="button__text">
-                                Log in
+                                <Link to='/cart'>Shopping Cart</Link>
                             </span>
                             <span className="button__icon">
                                 < LoginSharpIcon/>
+                            </span>
+                        </button>
+                    </div>
+                    <div className="create">
+                        <button type='button' className="button">
+                            <span className="button__text">
+                                <Link to='/create'>Sell Book</Link>
+                            </span>
+                            <span className="button__icon">
+                                < PersonAddAlt1SharpIcon/>
+                            </span>
+                        </button>
+                    </div>
+                    <div className="register">
+                        <button type='button' className="button">
+                            <span className="button__text">
+                                <Link to='/register'>Register</Link>
+                            </span>
+                            <span className="button__icon">
+                                < PersonAddAlt1SharpIcon/>
                             </span>
                         </button>
                     </div>
