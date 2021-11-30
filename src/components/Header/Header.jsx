@@ -45,7 +45,27 @@ class Header extends Component{
                     <div className="home">
                         <button type='button' className="button">
                             <span className="button__text">
-                                <Link to='/home'>Home</Link>
+                                <Link to='/'>Home</Link>
+                            </span>
+                            <span className="button__icon">
+                                < PersonAddAlt1SharpIcon/>
+                            </span>
+                        </button>
+                    </div>
+                    <div className="cart">
+                        <button type='button' className="button">
+                            <span className="button__text">
+                                <Link to='/cart'>Shopping Cart</Link>
+                            </span>
+                            <span className="button__icon">
+                                < LoginSharpIcon/>
+                            </span>
+                        </button>
+                    </div>
+                    <div className="create">
+                        <button type='button' className="button">
+                            <span className="button__text">
+                                <Link to='/create'>Sell Book</Link>
                             </span>
                             <span className="button__icon">
                                 < PersonAddAlt1SharpIcon/>
@@ -59,16 +79,6 @@ class Header extends Component{
                             </span>
                             <span className="button__icon">
                                 < PersonAddAlt1SharpIcon/>
-                            </span>
-                        </button>
-                    </div>
-                    <div className="login">
-                        <button type='button' className="button">
-                            <span className="button__text">
-                                <Link to='/login'>Login</Link>
-                            </span>
-                            <span className="button__icon">
-                                < LoginSharpIcon/>
                             </span>
                         </button>
                     </div>
