@@ -48,15 +48,15 @@ function App() {
         setJwt(localStorage.getItem('token'));
       }
 
-      // const logOut = ()=>{
-      //   localStorage.removeItem("token");
-      //   setUser({})
-      //   console.log("logged user out")
+       const logOut = ()=>{
+          localStorage.removeItem("token");
+          setUser({})
+          console.log("User has logged out")
+        }
 
         return (   
           <div>
-          <Header />
-          
+          <Header logout={logOut}/> 
             <Router>
                     <Route path="/" exact={true}>
                       <Home user={user}/>
@@ -79,7 +79,6 @@ function App() {
             </Router>
             </div>
         )
-    
 }
 
 export default App;

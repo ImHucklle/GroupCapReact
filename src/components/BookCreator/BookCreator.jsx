@@ -37,7 +37,7 @@ function BookCreator() {
                 <input type="text" id="title"  placeholder="Enter the book title" />
                 <input type="text" id="author"  placeholder ="Enter the author's name" />
                 <input type="text" id="genre"  placeholder ="Enter the book genre" />
-                <input type="number" id="releaseDate"  placeholder ="Enter the release date)" />
+                <input type="number" id="releaseDate"  placeholder ="Enter the release date" />
                 <input type="text" id="description"  placeholder ="Enter the description" />
                 <input type="number" id="price"  placeholder ="Enter the book price" />
                 <button type="submit">Add Book</button>
