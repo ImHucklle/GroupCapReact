@@ -17,7 +17,7 @@ const BookViewer = (props) => {
         let token = localStorage.getItem('token')
      
         let newBook={
-            productId: "",
+            BookId: parseInt(bookId),
             userId: "",
             quantity: 1
         }
@@ -55,7 +55,7 @@ const BookViewer = (props) => {
                         <h3>{book.releaseDate}</h3>
                     </div>    
                     <div className='price'><h3>$ {book.price}</h3></div>
-                    <button onClick={()=>addToCart(book.id)}>Add To Cart</button>
+                    <button onClick={()=>addToCart(book.BookId)}>Add To Cart</button>
                 </div>
                     
                 ))
