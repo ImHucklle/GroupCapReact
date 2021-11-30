@@ -65,6 +65,16 @@ class Header extends Component{
                             </span>
                         </button>
                     </div>
+                    <div className="books">
+                        <button type='button' className="button">
+                            <span className="button__text">
+                                <Link to="/books">Browse Books</Link>
+                            </span>
+                            <span className="button__icon">
+                                < LogoutSharpIcon/>
+                            </span>
+                        </button>
+                    </div>
                     <div className="register">
                         <button type='button' className="button">
                             <span className="button__text">
@@ -88,7 +98,7 @@ class Header extends Component{
                     <div className="logout">
                         <button type='button' className="button">
                             <span className="button__text">
-                                <Link to="/login" onClick={() =>{props.logout() }}>Logout Here</Link>
+                                {/* <Link to="/login" onClick={() =>{props.logout() }}>Logout Here</Link> */}
                             </span>
                             <span className="button__icon">
                                 < LogoutSharpIcon/>

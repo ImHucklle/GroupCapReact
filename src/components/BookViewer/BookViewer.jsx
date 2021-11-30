@@ -10,9 +10,20 @@ import { withRouter } from "react-router-dom";
 
 
 
-const BookViewer = () => {
+const BookViewer = (props) => {
     const [ books, setBooks] = useState([])
 
+    async function addToCart(bookId){
+        let token = localStorage.getItem('token')
+     
+        let newBook={
+            productId: "",
+            userId: "",
+            quantity: 1
+        }
+        let res = await axios.post('https://localhost:44394/api/shoppingcart', newBook, { headers: {Authorization: 'Bearer ' + token}})
+        return res.data
+      }
     const getbooks = async () => {
 
         try {
@@ -44,7 +55,7 @@ const BookViewer = () => {
                         <h3>{book.releaseDate}</h3>
                     </div>    
                     <div className='price'><h3>$ {book.price}</h3></div>
-                    <button>Add To Cart</button>
+                    <button onClick={()=>addToCart(book.id)}>Add To Cart</button>
                 </div>
                     
                 ))

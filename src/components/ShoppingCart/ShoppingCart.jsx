@@ -10,10 +10,7 @@ function ShoppingCart() {
     return res.data
   }
 
-  async function addToCart(book){
-    let res = await axios.post('https://localhost:44394/api/shoppingcart')
-    return res.data
-  }
+ 
 
     return(
         <div>
