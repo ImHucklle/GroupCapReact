@@ -11,9 +11,14 @@ import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import SellSharpIcon from '@mui/icons-material/SellSharp';
 
 class Header extends Component{
-    state = {
-        search: '',
-    };
+    constructor(props){
+        super(props)
+        this.state = {
+            search:'',
+            logout:''         
+            
+        }
+    }
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -21,8 +26,13 @@ class Header extends Component{
     }
     handleSubmit = event => {
         event.preventDefault();
-        this.props.getVideo(this.state);
+        this.props.bookSearch(this.state.search);
     }
+
+    handleLogout = async (event) => { 
+        this.props.logout()
+     }
+
     render() {
         return(
             <div className="header">
@@ -88,7 +98,7 @@ class Header extends Component{
                     <div className="logout">
                         <button type='button' className="button">
                             <span className="button__text">
-                                <Link to="/login" onClick={() =>{props.logout() }}>Logout Here</Link>
+                                <Link to="/login" onClick={this.handleLogout}>Logout Here</Link>
                             </span>
                             <span className="button__icon">
                                 < LogoutSharpIcon/>
