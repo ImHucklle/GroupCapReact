@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import axios from 'axios';
 import './Registration.scss';
-import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstant';
+// import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstant';
 import { withRouter } from "react-router-dom";
 
 // async function handleSubmitClick(){

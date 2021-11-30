@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+// import React, {useState} from 'react';
 import './App.css';
 import BookCreator from './BookCreator/BookCreator';
 import Registration from './Registration/Registration';
@@ -6,33 +6,20 @@ import Login from './Login/Login';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from './Header/Header'
 import HomePage from './Home/Home'
+import BookViewer from './BookViewer/BookViewer';
 function App() {
-    const [title, updateTitle] = useState(null);
-    const [updateErrorMessage] = useState(null);
+    // const [title, updateTitle] = useState(null);
+    // const [updateErrorMessage] = useState(null);
 
         return (
             <Router>
+                <Header/>
                 <Switch>
-                    <Route path="/" exact={true}>
-                        <Header/>
-                        <Registration showError={updateErrorMessage} updateTitle={updateTitle}/>
-                    </Route>
-                    <Route path="/register">
-                        <Header/>
-                        <Registration showError={updateErrorMessage} updateTitle={updateTitle}/>
-                    </Route>
-                    <Route path="/login">
-                        <Header/>
-                        <Login showError={updateErrorMessage} updateTitle={updateTitle}/>
-                    </Route>
-                    <Route path="/home">
-                        <Header/>
-                        <HomePage showError={updateErrorMessage} updateTitle={updateTitle}/>
-                    </Route>
-                    <Route path="/create">
-                        <Header/>
-                        <BookCreator showError={updateErrorMessage} updateTitle={updateTitle}/>
-                    </Route>
+                    <Route path="/" exact={true} component={HomePage} />
+                    <Route path="/register" component={Registration} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/create" component={BookCreator} />
+                    <Route path="/books" component={BookViewer} />
                 </Switch>  
             </Router>
             
