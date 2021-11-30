@@ -49,19 +49,30 @@ function App() {
     
       }
 
-        return (
+        return (   
+          <div>
+          <Header/>
             <Router>
-                <Header/>
-                <Switch>
-                    <Route path="/" exact={true} element={<HomePage user={user}/>} />
-                    <Route path="/register" component={Registration} />
-                    <Route path="/login" element={<Login loginUserCall={loginUser}/>} />
-                    <Route path="/create" component={BookCreator} />
-                    <Route path="/books" component={BookViewer} />
-                    <Route path="/cart" component={ShoppingCart} />
-                </Switch>  
+                    <Route path="/" exact={true}>
+                      <HomePage user={user}/>
+                    </Route>
+                    <Route path="/login">
+                      <Login loginUserCall ={loginUser}/>
+                    </Route>
+                    <Route path="/create">
+                      <BookCreator/>
+                    </Route>
+                    <Route path="/books">
+                      <BookViewer/>
+                    </Route>
+                    <Route path="/cart">
+                      <ShoppingCart/>
+                    </Route>
+                    <Route path="/register">
+                      <Registration/>
+                    </Route>
             </Router>
-            
+            </div>
         )
     
 }

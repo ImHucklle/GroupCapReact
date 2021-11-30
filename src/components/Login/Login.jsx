@@ -19,6 +19,12 @@ class Login extends Component{
     handleSubmit = async (event) => {
         event.preventDefault();             
         this.props.loginUserCall(this.state)
+        try{
+
+        }
+        catch{
+
+        }
     }
 
     render(){
@@ -27,7 +33,7 @@ class Login extends Component{
                     <input type="text" name="username" placeholder="Enter UserName" value= {this.state.username} onChange= {this.handleChange}/>
                     <input type="password" name="password" placeholder="Password" value= {this.state.password} onChange= {this.handleChange}/>
             
-                    {/* <button type="submit" onClick={handleSubmit}>Submit</button> */}
+                    {<button type="submit" onClick={this.handleSubmit}>Submit</button> }
             </div>
 
         );
