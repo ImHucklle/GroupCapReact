@@ -11,7 +11,7 @@ import { withRouter } from "react-router-dom";
 
 
 const BookViewer = () => {
-    const [ books, setBooks] = useState({})
+    const [ books, setBooks] = useState([])
 
     const getbooks = async () => {
 
@@ -32,10 +32,24 @@ const BookViewer = () => {
 
     return(
         <Fragment>
+         <div className="Bookcase">
             <h1>Browse Books</h1>
             {books.map((book)=> (
-                <><h2>{book.title}</h2><h3>{book.author}</h3><h3>{book.genre}</h3><h3>{book.dscription}</h3><h3>{book.releaseDate}</h3><h3>{book.price}</h3><button>Add To Cart</button></>
-            ))}
+                <div className='book'>
+                    <h2>{book.title}</h2>
+                    <h3>Author: {book.author}</h3>
+                    <h3>{book.genre}</h3>
+                    <div>
+                        <h3>{book.description}</h3>
+                        <h3>{book.releaseDate}</h3>
+                    </div>    
+                    <div className='price'><h3>$ {book.price}</h3></div>
+                    <button>Add To Cart</button>
+                </div>
+                    
+                ))
+            }
+          </div>
         </Fragment>
     )
 }
