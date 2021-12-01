@@ -1,5 +1,5 @@
 import axios from 'axios';
-import './App.css';
+import './App.scss';
 import jwtDecode from 'jwt-decode'
 import { useState, useEffect } from 'react';
 import BookCreator from './BookCreator/BookCreator';
@@ -10,6 +10,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from './Header/Header'
 import Home from './Home/Home'
 import BookViewer from './BookViewer/BookViewer';
+
 
 function App() {
     
@@ -59,22 +60,32 @@ function App() {
           <Header logout={logOut}/> 
             <Router>
                     <Route path="/" exact={true}>
+                    <div className="sections">
                       <Home user={user}/>
+                    </div>
                     </Route>
                     <Route path="/login">
+                    <div className="sections">
                       <Login loginUserCall ={loginUser}/>
+                    </div>
                     </Route>
                     <Route path="/create">
                       
                     </Route>
                     <Route path="/books">
+                    <div className="sections">
                       <BookViewer/>
+                    </div>
                     </Route>
                     <Route path="/cart">
+                    <div className="sections">
                       <ShoppingCart/>
+                    </div>  
                     </Route>
                     <Route path="/register">
+                    <div className="sections">
                       <Registration/>
+                    </div>
                     </Route>
             </Router>
             </div>

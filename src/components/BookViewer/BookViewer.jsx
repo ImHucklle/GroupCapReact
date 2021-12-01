@@ -38,7 +38,7 @@ const BookViewer = (props) => {
     return(
         <Fragment>
          <div className="Bookcase">
-            <h1>Browse Books</h1>
+            <h1 className='bookMargin'>Browse Books</h1>
             {books.map((book)=> (
                 <div className='book'>
                     <h2>{book.title}</h2>

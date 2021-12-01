@@ -1,61 +1,95 @@
-import React, { Component } from 'react';
-import './Header.css';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import "./Header.scss";
+import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 
-class Header extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            search:'',
-            logout:''         
-            
-        }
-    }
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
-    handleSubmit = event => {
-        event.preventDefault();
-        this.props.bookSearch(this.state.search);
-    }
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: "",
+      logout: "",
+    };
+  }
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.bookSearch(this.state.search);
+  };
 
-    handleLogout = async (event) => { 
-        this.props.logout()
-     }
+  handleLogout = async (event) => {
+    this.props.logout();
+  };
 
-    render() {
-        return(
-            <nav id="nav-bar">
-                <div className="container">
-                    <div className="logo">
-                        <Link to='/'><i class="fas fa-book fa-2x"></i>  <h1 className="logoH1">Blackwater Books</h1></Link>
-                                            </div>
+  render() {
+    return (
+      <nav id="nav-bar">
+        <div className="container">
+          <div className="section">
+            <div className="logo flex">
+              <Link to="/">
+                <i className="book" class="fas fa-book">
+                  {" "}
+                  <span>Blackwater Books</span>
+                </i>
+              </Link>
+            </div>
+          </div>
+          <div className="section space">
+            <div className="navLinks border">
+              <ul className="flex">
+                <li>
+                  <Link to="/">
+                    <i class="fas fa-home"></i> Home
+                  </Link>
+                </li>
 
-                    <div className="searchBar">
-                        <input placeholder="Search" type="text" />
-                        <SearchIcon className="header__inputButton" />
-                    </div>
+                <li>
+                  <Link to="/cart">
+                    <i class="fas fa-shopping-cart"></i> Shopping Cart
+                  </Link>
+                </li>
 
-                    <div className="navLinks">
-                        <ul>
-                            <li><Link to='/'><i class="fas fa-home fa-2x"></i> Home</Link></li>
-                            
-                            <li><Link to='/cart'><i class="fas fa-shopping-cart fa-2x"></i> Shopping Cart</Link></li>
-                            
-                            <li><Link to='/create'><i class="fas fa-dollar-sign fa-2x"></i> Sell Book</Link></li>
-                            
-                            <li><Link to='/register'><i class="fas fa-user-plus fa-2x"></i> Register</Link></li>
-                            
-                            <li><Link to="/login" onClick={this.handleLogout}><i class="fas fa-sign-in-alt"></i> Logout Here</Link></li>
+                <li>
+                  <Link to="/create">
+                    <i class="fas fa-dollar-sign"></i> Sell Book
+                  </Link>
+                </li>
 
-                            <li><Link to="/login" onClick={this.handleLogout}><i class="fas fa-sign-out-alt"></i> Logout Here</Link></li>
-                        </ul>
-                    </div>
+                <li>
+                  <Link to="/register">
+                    <i class="fas fa-user-plus"></i> Register
+                  </Link>
+                </li>
 
-                    {/* <div className="icons">
+                <li>
+                  <Link to="/login" onClick={this.handleLogout}>
+                    <i class="fas fa-sign-in-alt"></i> Logout Here
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* Search Container starts here */}
+            <div class="search-container">
+              <form>
+                <input type="text" placeholder="Search.." name="search" />
+                <button type="submit">
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+            {/* <li>
+                  <Link to="/login" onClick={this.handleLogout}>
+                    <i class="fas fa-sign-out-alt"></i> Logout Here
+                  </Link>
+                </li> */}
+          </div>
+
+          {/* <div className="icons">
                         <a href="https://www.linkedin.com/school/devcodecamp/" target="_blank">
                         <i class="fab fa-linkedin-in fa-3x"></i>
                         </a>                    
@@ -66,12 +100,12 @@ class Header extends Component{
                         <i class="fab fa-twitter fa-3x"></i>
                         </a>                    
                     </div>                     */}
-                </div>
-            </nav>
-        )
-    }
+        </div>
+      </nav>
+    );
+  }
 }
-export default Header
+export default Header;
 
 // import React, { Component } from 'react';
 // import './Header.css';
@@ -90,8 +124,8 @@ export default Header
 //         super(props)
 //         this.state = {
 //             search:'',
-//             logout:''         
-            
+//             logout:''
+
 //         }
 //     }
 //     handleChange = (event) => {
@@ -104,7 +138,7 @@ export default Header
 //         this.props.bookSearch(this.state.search);
 //     }
 
-//     handleLogout = async (event) => { 
+//     handleLogout = async (event) => {
 //         this.props.logout()
 //      }
 
