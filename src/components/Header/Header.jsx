@@ -31,7 +31,7 @@ class Header extends Component{
             <nav id="nav-bar">
                 <div className="container">
                     <div className="logo">
-                        <Link to='/'><i class="fas fa-book fa-2x"></i></Link>
+                        <Link to='/'><i class="fas fa-book fa-2x"></i>  <h1>Blackwater Books</h1></Link>
                                             </div>
 
                     <div className="searchBar">
