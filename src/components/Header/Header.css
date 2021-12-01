@@ -22,11 +22,11 @@ a, Link, i {
     align-items: center;
 }
 
-h1 {
+.logoH1 {
     padding-left: 5px;
     font-family: 'DM Serif Display', serif;
     font-size: 30px;
-}
+    }
 
 
 /* .header {
