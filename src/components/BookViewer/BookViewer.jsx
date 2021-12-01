@@ -1,13 +1,7 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import axios from 'axios';
 import './BookViewer.scss';
-// import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstant';
 import { withRouter } from "react-router-dom";
-// import { PinDropSharp } from '@material-ui/icons';
-// import React, {useState} from 'react';
-// import axios from 'axios';
-// import './BookViewer.scss';
-
 
 
 const BookViewer = (props) => {
